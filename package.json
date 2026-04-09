@@ -2,6 +2,18 @@
   "name": "yukinori-okd-web",
   "type": "module",
   "version": "0.0.1",
+  "description": "Yukinori Okada's personal website",
+  "author": {
+    "name": "Yukinori Okada",
+    "email": "yukinori.okd@gmail.com",
+    "url": "https://yukinori-okd.pages.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yukinori-okd/yukinori-okd-web.git"
+  },
+  "homepage": "https://github.com/yukinori-okd/yukinori-okd-web#readme",
+  "license": "MIT",
   "engines": {
     "node": ">=22.12.0"
   },
