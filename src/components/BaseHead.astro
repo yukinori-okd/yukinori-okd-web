@@ -57,4 +57,4 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
-<ClientRouter />
+<ClientRouter fallback="swap" />
