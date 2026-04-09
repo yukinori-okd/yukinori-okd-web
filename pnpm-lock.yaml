@@ -21,7 +21,7 @@ importers:
         specifier: ^6.1.5
         version: 6.1.5(@types/node@24.12.2)(rollup@4.60.1)
       sharp:
-        specifier: ^0.34.3
+        specifier: ^0.34.5
         version: 0.34.5
 
 packages:
