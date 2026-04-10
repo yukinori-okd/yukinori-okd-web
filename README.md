@@ -1,10 +1,75 @@
-# Astro Starter Kit: Blog
+# Yukinori Okada's Personal Web
+## Language
+[日本語](#日本語) | [English](#English)
 
-```sh
-pnpm create astro@latest -- --template blog
+## 日本語
+
+### 機能
+
+- サイトマップのサポート
+- RSS フィードのサポート
+- Markdown, MDX サポート
+- OGP (Open Graph Protocol) に対応
+- 記事のタグ付けサポート
+- 見た目が統一された 404 ページ
+- View Transitions API によるシームレスなページ遷移
+
+### 参考
+
+- [Astro Starter Kit: Blog](https://github.com/withastro/astro/tree/main/examples/blog)
+- [Astro タグ別記事一覧ページの作り方](https://qiita.com/takeshi_du/items/4d8d63a8c1231ac8828a)
+- [カスタム404エラーページ | Astro Docs](https://docs.astro.build/ja/basics/astro-pages/#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0404%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%BC%E3%82%B8)
+- [View transitions | Astro Docs](https://docs.astro.build/ja/guides/view-transitions/)
+
+### 技術スタック
+- Astro
+- TypeScript
+- JavaScript
+- Cloudflare Pages
+- pnpm
+
+### プロジェクト構造
+
+```text
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
+├── .editorconfig
+├── .gitignore
+├── astro.config.mjs
+├── README.md
+├── package.json
+└── tsconfig.json
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+`src/pages/` ディレクトリ内の `.astro` か `.md` ファイルを走査して、ファイル名によりルーティングを行います。
+
+`src/components/` には Astro や UI Frameworks のコンポーネントを配置します。
+
+`src/content/` には、ポストとしての Markdown および MDX ドキュメントの「コレクション」を配置しています。`getCollection()` を使用して `src/content/post/` から投稿を確認できるほか、タグ付けも行います。
+
+`public/` には画像などの静的リソースを配置しています。
+
+### コマンド
+
+ターミナルにて、プロジェクトのルートディレクトリで叩くことができるコマンド:
+
+| コマンド               | 実行内容                                          |
+| :--------------------- | :------------------------------------------------ |
+| `pnpm install`         | 依存関係のインストール                            |
+| `pnpm dev`             | `localhost:4321` でのローカル開発サーバーの起動   |
+| `pnpm build`           | `./dist/` にプロダクションでサイトをビルド        |
+| `pnpm preview`         | ビルドしたものをローカルでプレビュー              |
+| `pnpm astro ...`       | `astro add`, `astro check` のようなコマンドの実行 |
+| `pnpm astro -- --help` | Astro CLI の使用に関するヘルプ                    |
+
+## English
+
+------ テンプレのまま ------
 
 Features:
 
