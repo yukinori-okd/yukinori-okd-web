@@ -1,0 +1,25 @@
+---
+// すべてのタグリストのページを生成する
+import { getCollection } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+
+const allPosts = await getCollection('posts');
+const uniqueTags = new Set<string>();
+allPosts.forEach((post) => {
+  post.data.tags?.forEach((tag) => {
+    uniqueTags.add(tag);
+  });
+});
+
+const sortedTags = Array.from(uniqueTags).sort(); // アルファベット順にソート
+---
+<PostLayout title="すべてのタグ" description="" pubDate={new Date()} updatedDate={new Date()}>
+  <h1>すべてのタグ一覧</h1>
+  <ul>
+    {sortedTags.map((tag) => (
+      <li>
+        <a href={`/posts/tags/${tag}/`}>{tag}</a>
+      </li>
+    ))}
+  </ul>
+</PostLayout>
