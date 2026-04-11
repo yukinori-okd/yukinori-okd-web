@@ -1,6 +1,8 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
+const email_address = 'yukinori.okd@gmail.com';
+const github_handle = 'yukinori-okd';
 ---
 
 <PostLayout
@@ -9,7 +11,26 @@ import PostLayout from '../layouts/PostLayout.astro';
     pubDate={new Date('2026-04-10')}
     heroImage={AboutHeroImage}
 >
-    <p>
-        under construction
-    </p>
+    <dl>
+        <div>
+            <dt>Email</dt>
+            <dd>
+                <a href={`mailto:${email_address}`}>{email_address}</a>
+            </dd>
+        </div>
+        <div>
+            <dt>GitHub</dt>
+            <dd>
+                <a href={`https://github.com/${github_handle}`} target="_blank" rel="noopener noreferrer">
+                    {github_handle}
+                </a>
+            </dd>
+        </div>
+    </dl>
 </PostLayout>
+
+<style>
+    dt {
+        font-weight: bold;
+    }
+</style>
