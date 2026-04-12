@@ -20,6 +20,7 @@
 - [Astro タグ別記事一覧ページの作り方](https://qiita.com/takeshi_du/items/4d8d63a8c1231ac8828a)
 - [カスタム404エラーページ | Astro Docs](https://docs.astro.build/ja/basics/astro-pages/#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0404%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%BC%E3%82%B8)
 - [View transitions | Astro Docs](https://docs.astro.build/ja/guides/view-transitions/)
+- [faviconをsvgでスマートに設定する](https://zenn.dev/masatodev/articles/d80635ebfda05a)
 
 ### 技術スタック
 - Astro
