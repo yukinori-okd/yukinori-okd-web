@@ -2,6 +2,7 @@
   "name": "yukinori-okd-web",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "description": "Yukinori Okada's personal website",
   "author": {
     "name": "Yukinori Okada",
