@@ -1,6 +1,14 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
+import TimeLine from '../components/TimeLine.astro';
+
+const historyItems = [
+    { date: '2019年04月', content: '沼津高専 制御情報工学科 入学' },
+    { date: '2024年03月', content: '沼津高専 制御情報工学科 卒業' },
+    { date: '2024年04月', content: '東京工科大学 メディア学部 メディア学科 2年次編入学' },
+    { date: '2027年03月', content: '東京工科大学 メディア学部 メディア学科 卒業見込み' },
+];
 ---
 
 <PostLayout
@@ -15,10 +23,5 @@ import PostLayout from '../layouts/PostLayout.astro';
         東京工科大学 メディア学部 メディア学科 在籍
     </p>
     <h2>History</h2>
-    <ul>
-        <li>2019年04月: 沼津高専 制御情報工学科 入学</li>
-        <li>2024年03月: 沼津高専 制御情報工学科 卒業</li>
-        <li>2024年04月: 東京工科大学 メディア学部 メディア学科 2年次編入学</li>
-        <li>2027年03月: 東京工科大学 メディア学部 メディア学科 卒業見込み</li>
-    </ul>
+    <TimeLine items={historyItems} />
 </PostLayout>
