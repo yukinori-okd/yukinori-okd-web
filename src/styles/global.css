@@ -28,6 +28,7 @@ body {
     color: rgb(var(--gray-dark));
     font-size: 20px;
     line-height: 1.7;
+    text-autospace: normal;
 }
 main {
     width: 720px;
