@@ -13,6 +13,9 @@
     "url": "git+https://github.com/yukinori-okd/yukinori-okd-web.git"
   },
   "homepage": "https://github.com/yukinori-okd/yukinori-okd-web#readme",
+  "bugs": {
+    "url": "https://github.com/yukinori-okd/yukinori-okd-web/issues"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=22.12.0"
