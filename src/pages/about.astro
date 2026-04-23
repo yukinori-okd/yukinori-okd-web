@@ -9,19 +9,181 @@ const historyItems = [
     { date: '2024年04月', content: '東京工科大学 メディア学部 メディア学科 2年次編入学' },
     { date: '2027年03月', content: '東京工科大学 メディア学部 メディア学科 卒業見込み' },
 ];
+
+interface Skill {
+    genre: string,
+    list: Array<string | LeafSkill>
+}
+interface LeafSkill {
+    genre: string,
+    list: Array<string>,
+}
+
+const skills: Array<Skill> = [
+    {
+        genre: "Programming/Markup Languages",
+        list: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "C#",
+            "Python3",
+            "C (C99)",
+            "C++ (C++03, C++20)",
+            "Rust",
+            "Go",
+            "Shell Script",
+            "Lua (5.1, 5.4)",
+            "LuaJIT",
+            "GLSL",
+            "HLSL",
+            "Google Apps Script",
+            "GitHub Actions Workflow",
+        ],
+    },
+    {
+        genre: "Runtimes & Frameworks & Libraries",
+        list: [
+            {
+                genre: "C/C++",
+                list: [
+                    "Simple DirectMedia Layer 2/3",
+                    "OpenCV",
+                    "Dear ImGui",
+                ],
+            },
+            {
+                genre: "C#",
+                list: [
+                    ".NET",
+                    "ASP.NET Core",
+                    "GtkSharp3",
+                    "Avalonia UI",
+                ],
+            },
+            {
+                genre: "JS/TS",
+                list: [
+                    "Astro",
+                    "React",
+                    "Svelte",
+                    "Node.js",
+                    "Tauri",
+                ],
+            },
+        ],
+    },
+    {
+        genre: "Tools",
+        list: [
+            {
+                genre: "Development",
+                list: [
+                    "Git",
+                    "GitHub",
+                    "GitLab",
+                    "Visual Studio",
+                    "Visual Studio Code",
+                    "Vim",
+                    "Canva"
+                ]
+            },
+            {
+                genre: "Game Engine",
+                list: [
+                    "Unity",
+                    "Unreal Engine",
+                    "Godot",
+                ],
+            },
+            {
+                genre: "Database",
+                list: [
+                    "MySQL",
+                    "MariaDB",
+                ]
+            },
+            {
+                genre: "Image",
+                list: [
+                    "Adobe Photoshop",
+                    "Adobe Illustrator",
+                    "Affinity",
+                    "GIMP",
+                    "Inkscape",
+                    "Krita",
+                ],
+            },
+            {
+                genre: "Video",
+                list: [
+                    "AviUtl",
+                    "AviUtl ExEdit2",
+                    "Adobe AfterEffects",
+                    "DaVinci Resolve Studio",
+                    "FFmpeg",
+                ],
+            },
+            {
+                genre: "Audio",
+                list: [
+                    "Audacity",
+                    "Pro Tools",
+                    "REAPER",
+                    "CSound",
+                ],
+            },
+        ],
+    },
+]
 ---
 
 <PostLayout
     title="About Me"
     description="About me and my history"
     pubDate={new Date('2026-04-14')}
+    updatedDate={new Date('2026-04-24')}
     heroImage={AboutHeroImage}
 >
     <h2>About Me</h2>
-    <p>
-        2003年 神奈川県生まれ<br />
-        東京工科大学 メディア学部 メディア学科 在籍
-    </p>
+    <ul>
+        <li>2003年 神奈川県生まれ</li>
+        <li>東京工科大学 メディア学部 メディア学科 在籍</li>
+        <li>準学士(工学)</li>
+    </ul>
     <h2>History</h2>
     <TimeLine items={historyItems} />
+    <h2>Skills (Alphabetical Order)</h2>
+    {
+        skills.map(s =>
+            <div>
+                <h3>{s.genre}</h3>
+                <ul>
+                    {
+                        s.list.sort((a, b) => {
+                            const nameA = typeof a === 'string' ? a : a.genre;
+                            const nameB = typeof b === 'string' ? b : b.genre;
+                            return nameA.localeCompare(nameB, 'ja');
+                        }).map(l => {
+                            if (typeof l === "string") {
+                                return (<li>{l}</li>)
+                            } else {
+                                return (
+                                    <li>
+                                        <h4>{l.genre}</h4>
+                                        <ul>
+                                        {
+                                            l.list.sort().map(leaf => <li>{leaf}</li>)
+                                        }
+                                        </ul>
+                                    </li>
+                                )
+                            }
+                        })
+                    }
+                </ul>
+            </div>
+        )
+    }
 </PostLayout>
