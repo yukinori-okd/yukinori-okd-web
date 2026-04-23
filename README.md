@@ -14,6 +14,12 @@
 - 見た目が統一された 404 ページ
 - View Transitions API によるシームレスなページ遷移
 
+## 実装予定
+
+- カラースキームによる、ライトモード・ダークモード切り替え
+- 記事用タグ別サイドバー
+- Schema.org による SEO 対策
+
 ### 参考
 
 - [Astro Starter Kit: Blog](https://github.com/withastro/astro/tree/main/examples/blog)
