@@ -1,0 +1,86 @@
+---
+import type { SkillCardProps, SkillItem } from '../types/skills';
+
+export type Props = SkillCardProps;
+
+const { title, items } = Astro.props;
+
+// Separate flat skills from nested skills
+const flatSkills = items.filter(item => typeof item === 'string') as string[];
+const nestedSkills = items.filter(item => typeof item !== 'string') as SkillItem[];
+---
+
+<div class="skill-card">
+    <h3>{title}</h3>
+    <div class="card-content">
+        {flatSkills.length > 0 && (
+            <ul class="skill-list">
+                {flatSkills.sort().map(skill =>
+                    <li>{skill}</li>
+                )}
+            </ul>
+        )}
+        {nestedSkills.map(item => (
+            <div class="skill-section">
+                <h4>{item.genre}</h4>
+                <ul class="skill-list">
+                    {item.list.sort().map(skill =>
+                        <li>{skill}</li>
+                    )}
+                </ul>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .skill-card {
+        background-color: white;
+        border: 1px solid rgb(var(--gray-light));
+        border-radius: 8px;
+        padding: 1.5em;
+        box-shadow: 0 1px 3px rgba(var(--gray), 15%);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(var(--gray), 25%);
+    }
+
+    .skill-card h3 {
+        margin-top: 0;
+        margin-bottom: 1.25em;
+        font-size: 1.25em;
+        color: rgb(var(--black));
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25em;
+    }
+
+    .skill-section h4 {
+        margin: 0 0 0.75em 0;
+        font-size: 1em;
+        color: rgb(var(--gray-dark));
+    }
+
+    .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .skill-list li {
+        background-color: rgb(var(--gray-light));
+        padding: 0.4em 0.8em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: rgb(var(--gray-dark));
+    }
+</style>

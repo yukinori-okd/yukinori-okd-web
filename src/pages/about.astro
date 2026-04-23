@@ -2,6 +2,8 @@
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
 import TimeLine from '../components/TimeLine.astro';
+import SkillCard from '../components/SkillCard.astro';
+import type { SkillCardProps } from '../types/skills';
 
 const historyItems = [
     { date: '2019年04月', content: '沼津高専 制御情報工学科 入学' },
@@ -10,19 +12,11 @@ const historyItems = [
     { date: '2027年03月', content: '東京工科大学 メディア学部 メディア学科 卒業見込み' },
 ];
 
-interface Skill {
-    genre: string,
-    list: Array<string | LeafSkill>
-}
-interface LeafSkill {
-    genre: string,
-    list: Array<string>,
-}
 
-const skills: Array<Skill> = [
+const skills: SkillCardProps[] = [
     {
-        genre: "Programming/Markup Languages",
-        list: [
+        title: "Programming/Markup Languages",
+        items: [
             "HTML",
             "CSS",
             "JavaScript",
@@ -43,8 +37,8 @@ const skills: Array<Skill> = [
         ],
     },
     {
-        genre: "Runtimes & Frameworks & Libraries",
-        list: [
+        title: "Runtimes & Frameworks & Libraries",
+        items: [
             {
                 genre: "C/C++",
                 list: [
@@ -75,8 +69,8 @@ const skills: Array<Skill> = [
         ],
     },
     {
-        genre: "Tools",
-        list: [
+        title: "Tools",
+        items: [
             {
                 genre: "Development",
                 list: [
@@ -155,35 +149,26 @@ const skills: Array<Skill> = [
     <h2>History</h2>
     <TimeLine items={historyItems} />
     <h2>Skills (Alphabetical Order)</h2>
-    {
-        skills.map(s =>
-            <div>
-                <h3>{s.genre}</h3>
-                <ul>
-                    {
-                        s.list.sort((a, b) => {
-                            const nameA = typeof a === 'string' ? a : a.genre;
-                            const nameB = typeof b === 'string' ? b : b.genre;
-                            return nameA.localeCompare(nameB, 'ja');
-                        }).map(l => {
-                            if (typeof l === "string") {
-                                return (<li>{l}</li>)
-                            } else {
-                                return (
-                                    <li>
-                                        <h4>{l.genre}</h4>
-                                        <ul>
-                                        {
-                                            l.list.sort().map(leaf => <li>{leaf}</li>)
-                                        }
-                                        </ul>
-                                    </li>
-                                )
-                            }
-                        })
-                    }
-                </ul>
-            </div>
-        )
-    }
+    <div class="skills-container">
+        {
+            skills.map(s => (
+                <SkillCard title={s.title} items={s.items} />
+            ))
+        }
+    </div>
+
+    <style>
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </PostLayout>
