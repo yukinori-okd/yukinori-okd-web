@@ -3,13 +3,12 @@ import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
 import TimeLine from '../components/TimeLine.astro';
 import SkillCard from '../components/SkillCard.astro';
-import type { SkillCardProps } from '../types/skills';
+import type { SkillCardProps} from '../types/skills';
+import type { TimelineItem } from '../types/timeline';
 
-const historyItems = [
-    { date: '2019年04月', content: '沼津高専 制御情報工学科 入学' },
-    { date: '2024年03月', content: '沼津高専 制御情報工学科 卒業' },
-    { date: '2024年04月', content: '東京工科大学 メディア学部 メディア学科 2年次編入学' },
-    { date: '2027年03月', content: '東京工科大学 メディア学部 メディア学科 卒業見込み' },
+const historyItems: TimelineItem[] = [
+    { startDate: '2019年04月', endDate: '2024年03月', institution: '沼津高専', department: '制御情報工学科', degree: '準学士(工学)', status: '卒業' },
+    { startDate: '2024年04月', endDate: '2027年03月', institution: '東京工科大学', department: 'メディア学部 メディア学科', status: '2年次編入学（卒業見込み）' },
 ];
 
 

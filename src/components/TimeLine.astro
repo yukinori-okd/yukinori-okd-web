@@ -1,10 +1,9 @@
 ---
-export interface Props {
-    items: Array<{
-        date: string;
-        content: string;
-    }>;
-}
+import type { TimelineItem } from '../types/timeline';
+
+export type Props = {
+    items: TimelineItem[];
+};
 
 const { items } = Astro.props;
 ---
@@ -40,13 +39,41 @@ const { items } = Astro.props;
     .timeline-content {
         color: rgb(var(--gray-dark));
     }
+    .timeline-divider {
+        border-top: 1px solid rgb(var(--gray-light));
+        margin: 8px 0;
+    }
+    .timeline-institution {
+        font-weight: 700;
+        color: rgb(var(--black));
+    }
+    .timeline-department {
+        font-weight: 400;
+        color: rgb(var(--gray-dark));
+        font-size: 0.8em;
+    }
+    .timeline-degree {
+        font-weight: 400;
+        color: rgb(var(--gray-dark));
+        font-size: 0.8em;
+    }
+    .timeline-status {
+        color: rgb(var(--gray));
+        font-size: 0.8em;
+    }
 </style>
 
 <div class="timeline">
     {items.map((item) => (
         <div class="timeline-item">
-            <div class="timeline-date">{item.date}</div>
-            <div class="timeline-content">{item.content}</div>
+            <div class="timeline-date">{item.startDate} ー {item.endDate}</div>
+            <div class="timeline-divider"></div>
+            <div class="timeline-content">
+                <div class="timeline-institution">{item.institution}</div>
+                <div class="timeline-department">{item.department}</div>
+                <div class="timeline-degree">{item.degree}</div>
+                {item.status && <div class="timeline-status">{item.status}</div>}
+            </div>
         </div>
     ))}
 </div>
