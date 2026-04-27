@@ -4,7 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-:root {
+:root,
+[data-theme="light"] {
     --accent: 35, 55, 255;
     --accent-hover: 0, 13, 138;
     --text-primary: 15, 18, 25;
@@ -18,6 +19,26 @@
         0 2px 6px rgba(var(--text-secondary), 25%),
         0 8px 24px rgba(var(--text-secondary), 33%),
         0 16px 32px rgba(var(--text-secondary), 33%);
+}
+
+[data-theme="dark"] {
+    --accent: 100, 150, 255;
+    --accent-hover: 150, 180, 255;
+    --text-primary: 230, 230, 230;
+    --text-secondary: 180, 180, 180;
+    --text-body: 210, 210, 210;
+    --nav-shadow: 255, 255, 255;
+    --surface-base: 25, 25, 25;
+    --surface-sub: 50, 50, 50;
+    --page-top-gradient: rgba(var(--surface-sub), 50%), rgb(var(--surface-base));
+    --image-shadow:
+        0 2px 6px rgba(0, 0, 0, 25%),
+        0 8px 24px rgba(0, 0, 0, 33%),
+        0 16px 32px rgba(0, 0, 0, 33%);
+}
+
+html {
+    background: rgb(var(--surface-base));
 }
 body {
     font-family: var(--font-atkinson);

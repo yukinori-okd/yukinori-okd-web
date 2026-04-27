@@ -1,6 +1,7 @@
 ---
 import { MY_NAME } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import ThemeSwitcher from './ThemeSwitcher.astro';
 ---
 
 <header>
@@ -12,6 +13,9 @@ import HeaderLink from './HeaderLink.astro';
             <HeaderLink href="/about">About</HeaderLink>
             <HeaderLink href="/works">Works</HeaderLink>
             <HeaderLink href="/contact">Contact</HeaderLink>
+        </div>
+        <div class="theme-switcher-container">
+            <ThemeSwitcher />
         </div>
     </nav>
 </header>
@@ -38,6 +42,13 @@ import HeaderLink from './HeaderLink.astro';
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1em;
+    }
+    .internal-links {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin-left: auto;
     }
     nav a {
         padding: 1em 0.5em;
@@ -48,5 +59,9 @@ import HeaderLink from './HeaderLink.astro';
     nav a.active {
         text-decoration: none;
         border-bottom-color: rgb(var(--accent));
+    }
+    .theme-switcher-container {
+        display: flex;
+        align-items: center;
     }
 </style>

@@ -1,0 +1,83 @@
+---
+---
+
+<select id="theme-selector" class="theme-switcher">
+    <option value="auto">Auto</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+</select>
+
+<script is:inline>
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function initializeTheme() {
+        const theme = localStorage.getItem('theme') || 'auto';
+        const dataTheme = theme === 'auto' ? getSystemTheme() : theme;
+        document.documentElement.setAttribute('data-theme', dataTheme);
+    }
+
+    // Initialize immediately to prevent flash
+    initializeTheme();
+
+    function initTheme() {
+        const selector = document.getElementById('theme-selector');
+
+        // Get saved theme preference or default to "auto"
+        const savedTheme = localStorage.getItem('theme') || 'auto';
+        selector.value = savedTheme;
+
+        // Listen for changes
+        selector.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            localStorage.setItem('theme', theme);
+            applyTheme(theme);
+        });
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'auto') {
+            // Set data-theme based on system preference
+            document.documentElement.setAttribute('data-theme', getSystemTheme());
+        } else {
+            // Set data-theme to "light" or "dark"
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    }
+
+    // Initialize selector when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTheme);
+    } else {
+        initTheme();
+    }
+
+    // Re-initialize on Astro navigation (for View Transitions)
+    document.addEventListener('astro:after-swap', () => {
+        initializeTheme();
+        initTheme();
+    });
+</script>
+
+<style>
+    .theme-switcher {
+        padding: 0.5em 0.75em;
+        border: 1px solid rgb(var(--surface-sub));
+        border-radius: 4px;
+        background-color: rgb(var(--surface-base));
+        color: rgb(var(--text-primary));
+        font-size: 0.95em;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+
+    .theme-switcher:hover {
+        border-color: rgb(var(--accent));
+    }
+
+    .theme-switcher:focus {
+        outline: 2px solid rgb(var(--accent));
+        outline-offset: 2px;
+    }
+</style>
