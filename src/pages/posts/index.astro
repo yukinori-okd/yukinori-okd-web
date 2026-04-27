@@ -45,19 +45,19 @@ const posts = (await getCollection('posts')).sort(
             }
             .title {
                 margin: 0;
-                color: rgb(var(--black));
+                color: rgb(var(--text-primary));
                 line-height: 1;
             }
             .date {
                 margin: 0;
-                color: rgb(var(--gray));
+                color: rgb(var(--text-secondary));
             }
             ul li a:hover h4,
             ul li a:hover .date {
                 color: rgb(var(--accent));
             }
             ul a:hover img {
-                box-shadow: var(--box-shadow);
+                box-shadow: var(--image-shadow);
             }
             .post-card-tags {
                 margin-top: 0.5em;

@@ -35,24 +35,24 @@ const nestedSkills = items.filter(item => typeof item !== 'string') as SkillItem
 
 <style>
     .skill-card {
-        background-color: white;
-        border: 1px solid rgb(var(--gray-light));
+        background-color: rgb(var(--surface-base));
+        border: 1px solid rgb(var(--surface-sub));
         border-radius: 8px;
         padding: 1.5em;
-        box-shadow: 0 1px 3px rgba(var(--gray), 15%);
+        box-shadow: 0 1px 3px rgba(var(--text-secondary), 15%);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .skill-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(var(--gray), 25%);
+        box-shadow: 0 4px 12px rgba(var(--text-secondary), 25%);
     }
 
     .skill-card h3 {
         margin-top: 0;
         margin-bottom: 1.25em;
         font-size: 1.25em;
-        color: rgb(var(--black));
+        color: rgb(var(--text-primary));
     }
 
     .card-content {
@@ -64,7 +64,7 @@ const nestedSkills = items.filter(item => typeof item !== 'string') as SkillItem
     .skill-section h4 {
         margin: 0 0 0.75em 0;
         font-size: 1em;
-        color: rgb(var(--gray-dark));
+        color: rgb(var(--text-body));
     }
 
     .skill-list {
@@ -77,10 +77,10 @@ const nestedSkills = items.filter(item => typeof item !== 'string') as SkillItem
     }
 
     .skill-list li {
-        background-color: rgb(var(--gray-light));
+        background-color: rgb(var(--surface-sub));
         padding: 0.4em 0.8em;
         border-radius: 4px;
         font-size: 0.9em;
-        color: rgb(var(--gray-dark));
+        color: rgb(var(--text-body));
     }
 </style>
