@@ -2,8 +2,9 @@
 title: 'AstroのMarkdownでTeXを使う'
 description: 'Use TeX in Markdown with Astro'
 pubDate: '2026-04-15'
+updatedDate: '2026-04-28'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-tags: ["Astro", "TeX"]
+tags: ["Astro", "TeX", "Markdown", "MathJax"]
 ---
 #### 結論
 [remark-math](https://github.com/remarkjs/remark-math) + [rehype-mathjax](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-mathjax)によるビルド時のsvg生成を行うこととした。
