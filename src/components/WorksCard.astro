@@ -1,0 +1,141 @@
+---
+import type { WorksCardProps } from '../types/works';
+
+export type Props = WorksCardProps;
+
+const { title, description, technologies, links } = Astro.props;
+---
+
+<div class="works-card">
+    <div class="card-header">
+        <h3>{title}</h3>
+    </div>
+    <p class="description">{description}</p>
+
+    {technologies.length > 0 && (
+        <div class="technologies">
+            <h4>Technologies:</h4>
+            <ul class="tech-list">
+                {technologies.map(tech =>
+                    <li>{tech}</li>
+                )}
+            </ul>
+        </div>
+    )}
+
+    {links && links.length > 0 && (
+        <div class="links">
+            <h4>Links:</h4>
+            <ul class="links-list">
+                {links.map(link => (
+                    <li>
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-button">
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )}
+</div>
+
+<style>
+    .works-card {
+        background-color: rgb(var(--surface-base));
+        border: 1px solid rgb(var(--surface-sub));
+        border-radius: 8px;
+        padding: 1.5em;
+        box-shadow: 0 1px 3px rgba(var(--text-secondary), 15%);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .works-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(var(--text-secondary), 25%);
+    }
+
+    .card-header {
+        margin-bottom: 1em;
+    }
+
+    .card-header h3 {
+        margin: 0;
+        font-size: 1.25em;
+        color: rgb(var(--text-primary));
+    }
+
+    .description {
+        color: rgb(var(--text-body));
+        margin: 0 0 1.25em 0;
+        line-height: 1.6;
+    }
+
+    .technologies {
+        margin-bottom: 1.25em;
+    }
+
+    .technologies h4 {
+        margin: 0 0 0.75em 0;
+        font-size: 0.95em;
+        color: rgb(var(--text-body));
+        font-weight: 600;
+    }
+
+    .tech-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .tech-list li {
+        background-color: rgb(var(--surface-sub));
+        padding: 0.4em 0.8em;
+        border-radius: 4px;
+        font-size: 0.85em;
+        color: rgb(var(--text-body));
+    }
+
+    .links {
+        margin-bottom: 1.25em;
+    }
+
+    .links h4 {
+        margin: 0 0 0.75em 0;
+        font-size: 0.95em;
+        color: rgb(var(--text-body));
+        font-weight: 600;
+    }
+
+    .links-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .links-list li {
+        display: inline;
+    }
+
+    .link-button {
+        display: inline-block;
+        padding: 0.4em 0.8em;
+        background-color: rgb(var(--accent-base));
+        color: rgb(var(--accent-text));
+        border: 2px solid rgb(var(--surface-sub));
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.9em;
+        font-weight: 500;
+        transition: opacity 0.2s ease;
+    }
+
+    .link-button:hover {
+        opacity: 0.8;
+    }
+</style>
