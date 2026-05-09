@@ -1,3 +1,8 @@
+export interface Works {
+    genre: string;
+    works: WorksCardProps[];
+}
+
 export interface WorksCardProps {
     title: string;
     description: string;

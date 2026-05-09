@@ -2,22 +2,40 @@
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
 import WorksCard from '../components/WorksCard.astro';
-import type { WorksCardProps } from '../types/works';
+import type { Works, WorksCardProps } from '../types/works';
 
-const works: WorksCardProps[] = [
+const works: Works[] = [
     {
-        title: '高専太郎',
-        description: '沼津高専4年次の「創造設計」にて開発した、リモート授業にて教員学生間の円滑なコミュニケーションを行うためのハード・ソフトウェア。Raspberry Pi上で動作し、ライブストリーミング, カメラ操作, 挙手機能などが搭載されています。',
-        technologies: ['ASP.NET Core', 'Razor', 'NLog', 'GtkSharp', 'SDL2', 'FFmpeg', 'video.js', 'clmtrackr.js', 'Raspberry Pi', 'C#'],
+        genre: 'Technology',
+        works: [
+            {
+                title: '高専太郎',
+                description: '沼津高専4年次の「創造設計」にて開発した、リモート授業にて教員学生間の円滑なコミュニケーションを行うためのハード・ソフトウェア。Raspberry Pi上で動作し、ライブストリーミング, カメラ操作, 挙手機能などが搭載されています。',
+                technologies: ['ASP.NET Core', 'Razor', 'NLog', 'GtkSharp', 'SDL2', 'FFmpeg', 'video.js', 'clmtrackr.js', 'Raspberry Pi', 'C#'],
+            },
+            {
+                title: '個人Webサイト',
+                description: 'ここのサイトです。AstroとTypeScriptを使用して構築されており、Markdownから生成されるブログのような投稿や作品紹介などのコンテンツを提供しています。',
+                technologies: ['Astro', 'TypeScript'],
+                links: [
+                    { label: 'GitHub', url: 'https://github.com/yukinori-okd/yukinori-okd-web' }
+                ]
+            },
+        ]
     },
     {
-        title: '個人Webサイト',
-        description: 'ここのサイトです。AstroとTypeScriptを使用して構築されており、Markdownから生成されるブログのような投稿や作品紹介などのコンテンツを提供しています。',
-        technologies: ['Astro', 'TypeScript'],
-        links: [
-            { label: 'GitHub', url: 'https://github.com/yukinori-okd/yukinori-okd-web' }
+        genre: 'Creative',
+        works: [
+            {
+                title: 'GGJ TUT 2026',
+                description: 'OP映像・ED映像・配信中のBGM制御スクリプトなどを作成しました。',
+                technologies: ['AviUtl', 'AviUtl ExEdit2', 'REAPER'],
+                links: [
+                    { label: 'YouTube', url: 'https://www.youtube.com/@GGJTUTChannel/streams' }
+                ]
+            },
         ]
-    }
+    },
 ];
 ---
 
@@ -28,14 +46,28 @@ const works: WorksCardProps[] = [
     updatedDate={new Date('2026-04-29')}
     heroImage={AboutHeroImage}
 >
-    <div class="works-container">
-        {works.map(work => (
-            <WorksCard {...work} />
-        ))}
-    </div>
+    {
+        works.map(works_genre => (
+            <div class="works-genre">
+                <h2>{works_genre.genre}</h2>
+                <div class="works-container">
+                    {works_genre.works.map(work => (
+                        <WorksCard {...work} />
+                    ))}
+                </div>
+            </div>
+        ))
+    }
 </PostLayout>
 
 <style>
+    .works-genre {
+        margin-bottom: 5em;
+    }
+
+    .works-genre:last-child {
+        margin-bottom: 0;
+    }
     .works-container {
         display: grid;
         grid-template-columns: 1fr;
