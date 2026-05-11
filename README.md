@@ -14,10 +14,10 @@
 - 見た目が統一された 404 ページ
 - View Transitions API によるシームレスなページ遷移
 - カラースキームによる、ライトモード・ダークモード切り替え
+- PC, Smartphone レスポンシブデザイン対応
 
 ## 実装予定
 
-- PC, Tablet, Smartphone レスポンシブデザイン対応
 - 記事用タグ別サイドバー
 - Schema.org による SEO 対策
 
