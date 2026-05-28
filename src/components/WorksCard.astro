@@ -24,7 +24,7 @@ const { title, description, technologies, links } = Astro.props;
 
     {links && links.length > 0 && (
         <div class="links">
-            <h4>Links:</h4>
+            <hr class="links-separator" />
             <ul class="links-list">
                 {links.map(link => (
                     <li>
@@ -101,11 +101,10 @@ const { title, description, technologies, links } = Astro.props;
         margin-bottom: 1.25em;
     }
 
-    .links h4 {
-        margin: 0 0 0.75em 0;
-        font-size: 0.95em;
-        color: rgb(var(--text-body));
-        font-weight: 600;
+    .links-separator {
+        border: none;
+        border-top: 1px solid rgb(var(--surface-sub));
+        margin: 0 0 1em 0;
     }
 
     .links-list {
