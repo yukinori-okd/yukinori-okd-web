@@ -27,9 +27,9 @@
     --text-primary: 230, 230, 230;
     --text-secondary: 180, 180, 180;
     --text-body: 210, 210, 210;
-    --nav-shadow: 255, 255, 255;
+    --nav-shadow: 0, 0, 0;
     --surface-base: 25, 25, 25;
-    --surface-sub: 50, 50, 50;
+    --surface-sub: 35, 35, 35;
     --page-top-gradient: rgba(var(--surface-sub), 50%), rgb(var(--surface-base));
     --image-shadow:
         0 2px 6px rgba(0, 0, 0, 25%),
