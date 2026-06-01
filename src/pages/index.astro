@@ -19,7 +19,8 @@ import { SITE_DESCRIPTION, MY_NAME } from '../consts';
                     <p>
                         はじめまして。岡田 <ruby>幸憲 <rp>(</rp><rt>ゆきのり</rt><rp>)</rp></ruby>と申します。<br />
                         私のサイトをご覧いただきありがとうございます。<br />
-                        高専時代にC/C++を主とした制御情報工学を学び、現在は大学でメディアサイエンスの研究に励んでいます。<br />
+                        高専時代にはC/C++を主とした制御情報工学を学びました。<br />
+                        現在は大学でメディアサイエンスの研究に励んでいます。<br />
                         よろしくお願いいたします。
                     </p>
                     <p>
@@ -41,6 +42,23 @@ import { SITE_DESCRIPTION, MY_NAME } from '../consts';
 }
 #top-banner-block {
     margin: 0 auto;
-    height: 50%;
+    animation: fadeInUp 0.8s ease-out;
+}@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    #top-banner-block h1 {
+        font-size: 2em;
+    }
+    #top-banner-block p {
+        font-size: 1em;
+    }
 }
 </style>
