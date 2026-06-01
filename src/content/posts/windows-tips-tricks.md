@@ -2,7 +2,6 @@
 title: 'Windowsの小技集'
 description: 'Windows Tips and Tricks'
 pubDate: '2026-05-28'
-heroImage: '../../assets/blog-placeholder-1.jpg'
 tags: ["Windows", "Tips", "Tricks"]
 ---
 Windows11の25H2時点での記事

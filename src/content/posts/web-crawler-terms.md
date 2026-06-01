@@ -3,7 +3,6 @@ title: 'Webクローラー用語'
 description: 'Web Crawler Terminology'
 pubDate: '2026-04-10'
 updatedDate: '2026-04-28'
-heroImage: '../../assets/blog-placeholder-1.jpg'
 tags: ["Web", "Crawler", "Terms"]
 ---
 

@@ -3,7 +3,6 @@ title: 'AstroのMarkdownでTeXを使う'
 description: 'Use TeX in Markdown with Astro'
 pubDate: '2026-04-15'
 updatedDate: '2026-04-28'
-heroImage: '../../assets/blog-placeholder-1.jpg'
 tags: ["Astro", "TeX", "Markdown", "MathJax"]
 ---
 ## 結論
