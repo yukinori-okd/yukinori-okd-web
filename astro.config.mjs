@@ -6,11 +6,12 @@ import { unified } from '@astrojs/markdown-remark';
 import { defineConfig, fontProviders } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeMathJax from 'rehype-mathjax/svg';
+import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://yukinori-okd.pages.dev',
-    integrations: [mdx(), sitemap()],
+    integrations: [mdx(), sitemap(), icon()],
     fonts: [
         {
             provider: fontProviders.local(),
