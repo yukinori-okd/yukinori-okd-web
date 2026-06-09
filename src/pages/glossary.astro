@@ -1,5 +1,8 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { loadDefaultJapaneseParser } from "budoux";
+
+const parser = loadDefaultJapaneseParser();
 
 // ここで単語のデータを定義
 const words = [
@@ -211,7 +214,11 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
                                             ))}
                                         </div>
                                     )}
-                                    <p class="definition">{word.definition}</p>
+                                    <p class="definition budoux-data">
+                                        {parser.parse(word.definition).map((value, index) => (
+                                            <>{index > 0 && <wbr />}{value}</>
+                                        ))}
+                                    </p>
                                     {word.references && word.references.length > 0 && (
                                         <div class="references">
                                             <div class="references-label">References:</div>
@@ -311,6 +318,10 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
     .definition {
         margin: 1rem 0 0 0;
         line-height: 1.6;
+    }
+    .budoux-data {
+        word-break: keep-all;
+        overflow-wrap: anywhere;
     }
     .references {
         margin-top: 0.8rem;
