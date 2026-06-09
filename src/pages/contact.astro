@@ -1,8 +1,25 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
-const email_address = 'yukinori.okd@gmail.com';
-const github_handle = 'yukinori-okd';
+import { Icon } from "astro-icon/components";
+
+const links = [
+    {
+        name: 'Email',
+        url: `mailto:yukinori.okd@gmail.com`,
+        icon: 'mdi:email'
+    },
+    {
+        name: 'GitHub',
+        url: `https://github.com/yukinori-okd`,
+        icon: 'mdi:github'
+    },
+    {
+        name: 'SoundCloud',
+        url: `https://soundcloud.com/yukinori-okd`,
+        icon: 'mdi:soundcloud'
+    },
+];
 ---
 
 <PostLayout
@@ -11,26 +28,45 @@ const github_handle = 'yukinori-okd';
     pubDate={new Date('2026-04-10')}
     heroImage={AboutHeroImage}
 >
-    <dl>
-        <div>
-            <dt>Email</dt>
-            <dd>
-                <a href={`mailto:${email_address}`}>{email_address}</a>
-            </dd>
-        </div>
-        <div>
-            <dt>GitHub</dt>
-            <dd>
-                <a href={`https://github.com/${github_handle}`} target="_blank" rel="noopener noreferrer">
-                    {github_handle}
-                </a>
-            </dd>
-        </div>
-    </dl>
+    <div class="contact-links">
+        {links.map(link => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" class="contact-link">
+                <Icon name={link.icon} class="icon" />
+                <span>{link.name}</span>
+            </a>
+        ))}
+    </div>
 </PostLayout>
 
 <style>
-    dt {
+    .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 12px;
+        border: 2px solid rgba(128, 128, 128, 0.2);
+        text-decoration: none;
+        color: rgb(var(--text-primary));
         font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+    }
+    .contact-link:hover {
+        background: rgb(var(--accent));
+        color: #fff;
+        border-color: rgb(var(--accent));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 </style>
