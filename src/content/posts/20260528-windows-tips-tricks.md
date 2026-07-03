@@ -1,7 +1,8 @@
 ---
 title: 'Windowsの小技集'
-description: 'Windows Tips and Tricks'
+description: '画面外ウィンドウの移動やグラフィックスドライバの強制リセットなどWindows 11の小技まとめ'
 pubDate: '2026-05-28'
+updatedDate: '2026-07-03'
 tags: ["Windows", "Tips", "Tricks"]
 ---
 Windows11の25H2時点での記事

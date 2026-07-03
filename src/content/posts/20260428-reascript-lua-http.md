@@ -1,7 +1,8 @@
 ---
 title: 'ReaScript(Lua)内で簡単にHTTP通信をする方法'
-description: 'How to Easily Perform HTTP Communication in ReaScript(Lua)'
+description: 'ReaScript(Lua)からcurlをexec呼び出しして手軽にHTTP通信を行う方法'
 pubDate: '2026-04-28'
+updatedDate: '2026-07-03'
 tags: ["REAPER", "ReaScript", "Lua", "cURL"]
 ---
 ## 結論

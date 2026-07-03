@@ -1,8 +1,8 @@
 ---
 title: 'AstroのMarkdownでTeXを使う'
-description: 'Use TeX in Markdown with Astro'
+description: 'Astro製サイトでremark-math + rehype-mathjaxを使いビルド時に数式をSVG変換するまで'
 pubDate: '2026-04-15'
-updatedDate: '2026-04-28'
+updatedDate: '2026-07-03'
 tags: ["Astro", "TeX", "Markdown", "MathJax"]
 ---
 ## 結論
