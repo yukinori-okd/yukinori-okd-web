@@ -1,5 +1,5 @@
 ---
-import PostLayout from '../layouts/PostLayout.astro';
+import PostLayout from "../layouts/PostLayout.astro";
 import { loadDefaultJapaneseParser } from "budoux";
 
 const parser = loadDefaultJapaneseParser();
@@ -9,154 +9,193 @@ const words = [
     {
         term: "Astro",
         reading: "アストロ",
-        definition: "コンテンツ駆動の高速なWebサイトを構築するためのWebフレームワーク。このサイトでも使用している。",
+        definition:
+            "コンテンツ駆動の高速なWebサイトを構築するためのWebフレームワーク。このサイトでも使用している。",
         tags: ["Technology", "Web"],
-        references: ["https://astro.build/"]
+        references: ["https://astro.build/"],
     },
     {
         term: "TypeScript",
         reading: "タイプスクリプト",
-        definition: "JavaScriptに静的型付けを追加したプログラミング言語。このサイトでも使用している。",
+        definition:
+            "JavaScriptに静的型付けを追加したプログラミング言語。このサイトでも使用している。",
         tags: ["Language", "Web"],
-        references: ["https://www.typescriptlang.org/"]
+        references: ["https://www.typescriptlang.org/"],
     },
     {
         term: "Garbage Collection",
         reading: "ガベージコレクション",
-        definition: "プログラムが動的に確保したメモリ領域のうち、不要になったものを自動的に検索して解放する仕組み。メモリリークを防ぎ、開発者の負担を軽減するが、コレクタの動作によるパフォーマンスの影響がある場合もある。",
+        definition:
+            "プログラムが動的に確保したメモリ領域のうち、不要になったものを自動的に検索して解放する仕組み。メモリリークを防ぎ、開発者の負担を軽減するが、コレクタの動作によるパフォーマンスの影響がある場合もある。",
         tags: ["Technology"],
-        references: []
+        references: [],
     },
     {
         term: "P/Invoke",
         reading: "ピーインボーク",
-        definition: "Platform Invocation Servicesの略。C#などのマネージドコードから、C/C++などで書かれたネイティブなアンマネージドDLLの関数を呼び出すための機能。",
+        definition:
+            "Platform Invocation Servicesの略。C#などのマネージドコードから、C/C++などで書かれたネイティブなアンマネージドDLLの関数を呼び出すための機能。",
         tags: ["Technology"],
-        references: ["https://learn.microsoft.com/ja-jp/dotnet/standard/native-interop/pinvoke"]
+        references: [
+            "https://learn.microsoft.com/ja-jp/dotnet/standard/native-interop/pinvoke",
+        ],
     },
     {
         term: "Markdown",
         reading: "マークダウン",
-        definition: "テキスト形式で記述した文書をHTMLなどに変換するための軽量マークアップ言語。記号を用いて手軽に見出しやリスト、リンクなどを表現できる。Postsページのコンテンツは大体Markdownで書いている。",
+        definition:
+            "テキスト形式で記述した文書をHTMLなどに変換するための軽量マークアップ言語。記号を用いて手軽に見出しやリスト、リンクなどを表現できる。Postsページのコンテンツは大体Markdownで書いている。",
         tags: ["Language"],
-        references: []
+        references: [],
     },
     {
         term: "TeX",
         reading: "テフ",
-        definition: "組版処理システム。特に複雑な数式のレイアウトや描画に優れており、理系分野の学術論文などで標準的に用いられる。",
+        definition:
+            "組版処理システム。特に複雑な数式のレイアウトや描画に優れており、理系分野の学術論文などで標準的に用いられる。",
         tags: ["Typography"],
-        references: ["https://www.tug.org"]
+        references: ["https://www.tug.org"],
     },
     {
         term: "Typst",
         reading: "タイプスト",
-        definition: "Rust製の高速な新しい組版処理システムおよびマークアップ言語。TeXの代替として注目されている。",
+        definition:
+            "Rust製の高速な新しい組版処理システムおよびマークアップ言語。TeXの代替として注目されている。",
         tags: ["Typography"],
-        references: ["https://typst.app/"]
+        references: ["https://typst.app/"],
     },
     {
         term: "MathML",
         reading: "マスエムエル",
-        definition: "Mathematical Markup Languageの略。数学的な表現をXML形式で記述するためのマークアップ言語。ウェブ上で数式を表示するための標準規格の一つ。",
+        definition:
+            "Mathematical Markup Languageの略。数学的な表現をXML形式で記述するためのマークアップ言語。ウェブ上で数式を表示するための標準規格の一つ。",
         tags: ["Typography", "Web"],
-        references: ["https://www.w3.org/Math/"]
+        references: ["https://www.w3.org/Math/"],
     },
     {
         term: "MIDI",
         reading: "ミディ",
-        definition: "Musical Instrument Digital Interfaceの略。電子楽器やコンピューター間で演奏データなどの音楽情報を通信するための世界共通規格。音声データではなく、ノートオン/オフやベロシティなどの演奏指示を扱う。",
+        definition:
+            "Musical Instrument Digital Interfaceの略。電子楽器やコンピューター間で演奏データなどの音楽情報を通信するための世界共通規格。音声データではなく、ノートオン/オフやベロシティなどの演奏指示を扱う。",
         tags: ["Technology"],
-        references: ["https://www.midi.org/"]
+        references: ["https://www.midi.org/"],
     },
     {
         term: "Mutex",
         reading: "ミューテックス",
-        definition: "Mutual Exclusionの略。マルチスレッドプログラミングにおいて、複数のスレッドが共有リソースに同時にアクセスするのを防ぐための排他制御機構。",
+        definition:
+            "Mutual Exclusionの略。マルチスレッドプログラミングにおいて、複数のスレッドが共有リソースに同時にアクセスするのを防ぐための排他制御機構。",
         tags: ["Technology"],
-        references: []
+        references: [],
     },
     {
         term: "CMake",
         reading: "シーメイク",
-        definition: "クロスプラットフォームなビルド自動化ツール。コンパイラに依存しない設定ファイル（例外あり）から、ネイティブのビルド環境（MakefileやNinjaなど）向けのプロジェクトファイルを生成する。",
+        definition:
+            "クロスプラットフォームなビルド自動化ツール。コンパイラに依存しない設定ファイル（例外あり）から、ネイティブのビルド環境（MakefileやNinjaなど）向けのプロジェクトファイルを生成する。",
         tags: ["Technology", "Build System"],
-        references: ["https://cmake.org/"]
+        references: ["https://cmake.org/"],
     },
     {
         term: "Meson",
         reading: "メソン",
-        definition: "高速で使いやすいことを目指したオープンソースのビルドシステム。Pythonで実装されており、バックエンドとして主にNinjaを使用して高速なビルドを実現する。",
+        definition:
+            "高速で使いやすいことを目指したオープンソースのビルドシステム。Pythonで実装されており、バックエンドとして主にNinjaを使用して高速なビルドを実現する。",
         tags: ["Technology", "Build System"],
-        references: ["https://mesonbuild.com/"]
+        references: ["https://mesonbuild.com/"],
     },
     {
         term: "Ninja",
         reading: "ニンジャ",
-        definition: "スピードに焦点を当てた小規模なビルドシステム。CMakeやMesonなどのより高レベルなビルドシステムによって生成された入力ファイルを受け取り、実際のビルド処理を高速に実行する。",
+        definition:
+            "スピードに焦点を当てた小規模なビルドシステム。CMakeやMesonなどのより高レベルなビルドシステムによって生成された入力ファイルを受け取り、実際のビルド処理を高速に実行する。",
         tags: ["Technology", "Build System"],
-        references: ["https://ninja-build.org/"]
+        references: ["https://ninja-build.org/"],
     },
     {
         term: "Makefile",
         reading: "メイクファイル",
-        definition: "makeコマンドがソフトウェアをビルドする際に参照する、コンパイルの手順やファイル間の依存関係を記述した設定ファイル。インデントはスペースではなくタブで行う必要があり、注意が必要。",
+        definition:
+            "makeコマンドがソフトウェアをビルドする際に参照する、コンパイルの手順やファイル間の依存関係を記述した設定ファイル。インデントはスペースではなくタブで行う必要があり、注意が必要。",
         tags: ["Technology", "Build System"],
-        references: ["https://www.gnu.org/software/make/manual/make.html"]
+        references: ["https://www.gnu.org/software/make/manual/make.html"],
     },
     {
         term: "robots.txt",
         reading: "ロボットテキスト",
-        definition: "ウェブクローラーに対して、どのページをクロール可能か、クロール禁止か、クロール頻度などを指示するファイル。",
+        definition:
+            "ウェブクローラーに対して、どのページをクロール可能か、クロール禁止か、クロール頻度などを指示するファイル。",
         tags: ["Crawler", "Web"],
-        references: ["https://www.robotstxt.org"]
+        references: ["https://www.robotstxt.org"],
     },
     {
         term: "llms.txt",
         reading: "エルエルエムエステキスト",
-        definition: "LLM（大規模言語モデル）向けのサイト情報を提供するファイルフォーマット。AIがウェブサイトのコンテンツを効率的に理解するための仕様。",
+        definition:
+            "LLM（大規模言語モデル）向けのサイト情報を提供するファイルフォーマット。AIがウェブサイトのコンテンツを効率的に理解するための仕様。",
         tags: ["Crawler", "Web"],
-        references: ["https://llmstxt.org"]
+        references: ["https://llmstxt.org"],
     },
     {
         term: "schema.org",
         reading: "スキーマドットオルグ",
-        definition: "構造化データの標準化に向けた共同コミュニティ。ウェブページに構造化データを実装するためのスキーマを定義している。",
+        definition:
+            "構造化データの標準化に向けた共同コミュニティ。ウェブページに構造化データを実装するためのスキーマを定義している。",
         tags: ["Crawler", "Web"],
-        references: ["https://schema.org"]
+        references: ["https://schema.org"],
     },
     {
         term: "sitemap.xml",
         reading: "サイトマップエックスエムエル",
-        definition: "XMLフォーマットで記述されたサイトマップ。ウェブクローラーにサイトの構造とすべてのページの存在を効率的に通知するもの。",
+        definition:
+            "XMLフォーマットで記述されたサイトマップ。ウェブクローラーにサイトの構造とすべてのページの存在を効率的に通知するもの。",
         tags: ["Crawler", "Web"],
-        references: ["https://www.sitemaps.org"]
+        references: ["https://www.sitemaps.org"],
     },
     {
         term: ".NET",
         reading: "ドットネット",
-        definition: "Microsoftが開発したソフトウェアフレームワーク。C#などの言語でアプリケーションを開発するための共通のランタイム環境とライブラリを提供する。",
+        definition:
+            "Microsoftが開発したソフトウェアフレームワーク。C#などの言語でアプリケーションを開発するための共通のランタイム環境とライブラリを提供する。",
         tags: ["Technology"],
-        references: ["https://dotnet.microsoft.com/"]
+        references: ["https://dotnet.microsoft.com/"],
     },
     {
         term: "AGENTS.md",
         reading: "エージェンツエムディー",
-        definition: "AIエージェントが設計や実装に関するガイドラインを参照するドキュメント。AIエージェント用のREADMEのようなもの。",
+        definition:
+            "AIエージェントが設計や実装に関するガイドラインを参照するドキュメント。AIエージェント用のREADMEのようなもの。",
         tags: ["AI"],
-        references: ["https://agents.md/"]
+        references: ["https://agents.md/"],
     },
     {
         term: "BudouX",
         reading: "ブドウエックス",
-        definition: "自然な日本語・中国語・タイ語の改行を実現するためのライブラリ。文章を単語単位で分割し、適切な箇所で改行するようにする。",
+        definition:
+            "自然な日本語・中国語・タイ語の改行を実現するためのライブラリ。文章を単語単位で分割し、適切な箇所で改行するようにする。",
         tags: ["Technology"],
-        references: ["https://github.com/google/budoux"]
-    }
+        references: ["https://github.com/google/budoux"],
+    },
+    {
+        term: "librosa",
+        reading: "リブロサ",
+        definition:
+            "音声・音楽解析のためのPythonライブラリ。スペクトログラムの生成、テンポ推定、ピッチ検出、ビートトラッキングなどの機能を提供する。",
+        tags: ["Technology", "Audio"],
+        references: ["https://librosa.org/"],
+    },
+    {
+        term: "Common Package Specification",
+        reading: "コモンパッケージスペシフィケーション",
+        definition:
+            "プログラミング言語やビルドシステムの間で、ライブラリやパッケージのメタデータを共通化して相互運用するための仕様。",
+        tags: ["Technology"],
+        references: ["https://github.com/cps-org/cps"],
+    },
 ];
 
 // 用語をアルファベット順・五十音順などにソート
-const sortedWords = words.sort((a, b) => a.term.localeCompare(b.term, 'ja'));
+const sortedWords = words.sort((a, b) => a.term.localeCompare(b.term, "ja"));
 
 // 頭文字を取得する関数
 const getInitialChar = (word: any) => {
@@ -166,12 +205,15 @@ const getInitialChar = (word: any) => {
 };
 
 // 頭文字ごとにグループ化
-const groupedWords = sortedWords.reduce((acc, word) => {
-    const init = getInitialChar(word);
-    if (!acc[init]) acc[init] = [];
-    acc[init].push(word);
-    return acc;
-}, {} as Record<string, typeof words>);
+const groupedWords = sortedWords.reduce(
+    (acc, word) => {
+        const init = getInitialChar(word);
+        if (!acc[init]) acc[init] = [];
+        acc[init].push(word);
+        return acc;
+    },
+    {} as Record<string, typeof words>,
+);
 
 const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
     // アルファベットと数字を先に、それ以外を後にする
@@ -187,7 +229,7 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
 <PostLayout
     title="Glossary"
     description="Glossary of terms used in this site"
-    pubDate={new Date('2026-06-10')}
+    pubDate={new Date("2026-06-10")}
 >
     <div>
         <p>
@@ -208,35 +250,53 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
         {
             sortedInitials.map((initial) => (
                 <div class="index-section">
-                    <h2 id={`index-${initial}`} class="index-header">{initial}</h2>
+                    <h2 id={`index-${initial}`} class="index-header">
+                        {initial}
+                    </h2>
                     <div class="word-list">
-                        {
-                            groupedWords[initial].map((word) => (
-                                <div class="word-card">
-                                    <h3 class="term">{word.term} <span class="reading">{word.reading}</span></h3>
-                                    {word.tags && word.tags.length > 0 && (
-                                        <div class="tags">
-                                            {word.tags.map((tag) => (
-                                                <span class="tag">#{tag}</span>
-                                            ))}
-                                        </div>
-                                    )}
-                                    <p class="definition budoux-data">
-                                        {parser.parse(word.definition).map((value, index) => (
-                                            <>{index > 0 && <wbr />}{value}</>
+                        {groupedWords[initial].map((word) => (
+                            <div class="word-card">
+                                <h3 class="term">
+                                    {word.term}{" "}
+                                    <span class="reading">{word.reading}</span>
+                                </h3>
+                                {word.tags && word.tags.length > 0 && (
+                                    <div class="tags">
+                                        {word.tags.map((tag) => (
+                                            <span class="tag">#{tag}</span>
                                         ))}
-                                    </p>
-                                    {word.references && word.references.length > 0 && (
+                                    </div>
+                                )}
+                                <p class="definition budoux-data">
+                                    {parser
+                                        .parse(word.definition)
+                                        .map((value, index) => (
+                                            <>
+                                                {index > 0 && <wbr />}
+                                                {value}
+                                            </>
+                                        ))}
+                                </p>
+                                {word.references &&
+                                    word.references.length > 0 && (
                                         <div class="references">
-                                            <div class="references-label">References:</div>
+                                            <div class="references-label">
+                                                References:
+                                            </div>
                                             {word.references.map((ref) => (
-                                                <a href={ref} target="_blank" rel="noopener noreferrer" class="reference-link">{ref}</a>
+                                                <a
+                                                    href={ref}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="reference-link"
+                                                >
+                                                    {ref}
+                                                </a>
                                             ))}
                                         </div>
                                     )}
-                                </div>
-                            ))
-                        }
+                            </div>
+                        ))}
                     </div>
                 </div>
             ))
@@ -292,7 +352,9 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid rgba(128, 128, 128, 0.2);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
     }
     .word-card:hover {
         transform: translateY(-2px);
