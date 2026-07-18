@@ -78,20 +78,41 @@
 
 ## English
 
------- テンプレのまま ------
+### Features
 
-Features:
+- Sitemap support
+- RSS feed support
+- Markdown & MDX support
+- OGP (Open Graph Protocol) support
+- Article tagging support
+- Unified 404 page
+- Seamless page transitions via View Transitions API
+- Light/Dark mode toggle using color scheme
+- Responsive design (PC, Smartphone)
+- Natural line breaking via BudouX
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+### Planned Features
 
-## 🚀 Project Structure
+- Tag-based sidebar for articles
+- SEO improvements with Schema.org
 
-Inside of your Astro project, you'll see the following folders and files:
+### References
+
+- [Astro Starter Kit: Blog](https://github.com/withastro/astro/tree/main/examples/blog)
+- [Astro タグ別記事一覧ページの作り方](https://qiita.com/takeshi_du/items/4d8d63a8c1231ac8828a)
+- [カスタム404エラーページ | Astro Docs](https://docs.astro.build/ja/basics/astro-pages/#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0404%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%BC%E3%82%B8)
+- [View transitions | Astro Docs](https://docs.astro.build/ja/guides/view-transitions/)
+- [faviconをsvgでスマートに設定する](https://zenn.dev/masatodev/articles/d80635ebfda05a)
+
+### Tech Stack
+
+- Astro
+- TypeScript
+- JavaScript
+- Cloudflare Pages
+- pnpm
+
+### Project Structure
 
 ```text
 ├── public/
@@ -101,37 +122,31 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── content/
 │   ├── layouts/
 │   └── pages/
+├── .editorconfig
+├── .gitignore
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro scans `.astro` or `.md` files in the `src/pages/` directory and creates routes based on file names.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Place Astro or UI framework components in `src/components/`.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+The `src/content/` directory contains "collections" of Markdown and MDX documents used as posts. Use `getCollection()` to retrieve posts from `src/content/post/` and manage article tags.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Static assets like images go in the `public/` directory.
 
-## 🧞 Commands
+### Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+| Command               | Action                                           |
+| :-------------------- | :----------------------------------------------- |
+| `pnpm install`        | Installs dependencies                            |
+| `pnpm dev`            | Starts local dev server at `localhost:4321`      |
+| `pnpm build`          | Builds the production site to `./dist/`          |
+| `pnpm preview`        | Previews the build locally                       |
+| `pnpm astro ...`      | Runs CLI commands like `astro add`, `astro check`|
+| `pnpm astro -- --help`| Shows help for using the Astro CLI               |
