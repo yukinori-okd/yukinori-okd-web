@@ -1,5 +1,4 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
 import WorksCard from '../components/WorksCard.astro';
 import type { Works, WorksCardProps } from '../types/works';
@@ -45,7 +44,6 @@ const works: Works[] = [
     description="A collection of my work and projects."
     pubDate={new Date('2026-04-10')}
     updatedDate={new Date('2026-04-29')}
-    heroImage={AboutHeroImage}
 >
     {
         works.map(works_genre => (

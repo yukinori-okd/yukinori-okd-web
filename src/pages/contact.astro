@@ -1,5 +1,4 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import PostLayout from '../layouts/PostLayout.astro';
 import { Icon } from "astro-icon/components";
 
@@ -26,7 +25,6 @@ const links = [
     title="Contact"
     description="Get in touch with me."
     pubDate={new Date('2026-04-10')}
-    heroImage={AboutHeroImage}
 >
     <div class="contact-links">
         {links.map(link => (
