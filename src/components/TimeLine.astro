@@ -61,9 +61,19 @@ const { items } = Astro.props;
         color: rgb(var(--text-secondary));
         font-size: 0.8em;
     }
+    .timeline-empty {
+        text-align: center;
+        padding: 2em 1em;
+        color: rgb(var(--text-secondary));
+    }
 </style>
 
 <div class="timeline">
+    {items.length === 0 && (
+        <div class="timeline-empty">
+            <p>No timeline entries yet.</p>
+        </div>
+    )}
     {items.map((item) => (
         <div class="timeline-item">
             <div class="timeline-date">{item.startDate} ー {item.endDate}</div>
