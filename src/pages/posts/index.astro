@@ -63,6 +63,14 @@ const posts = (await getCollection('posts')).sort(
             .post-card-tags {
                 margin-top: 0.5em;
             }
+            .empty-state {
+                text-align: center;
+                padding: 3em 1em;
+                color: rgb(var(--text-secondary));
+            }
+            .empty-state p {
+                margin-bottom: 0.5em;
+            }
             @media (max-width: 720px) {
                 ul {
                     gap: 0.5em;
@@ -78,6 +86,12 @@ const posts = (await getCollection('posts')).sort(
         <Header />
         <main>
             <section>
+                {posts.length === 0 && (
+                    <div class="empty-state">
+                        <p>No posts have been published yet.</p>
+                        <p>Writing is in progress — check back soon.</p>
+                    </div>
+                )}
                 <ul>
                     {
                         posts.map((post) => (
