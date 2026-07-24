@@ -46,16 +46,23 @@ const works: Works[] = [
     updatedDate={new Date('2026-04-29')}
 >
     {
-        works.map(works_genre => (
-            <div class="works-genre">
-                <h2>{works_genre.genre}</h2>
-                <div class="works-container">
-                    {works_genre.works.map(work => (
-                        <WorksCard {...work} />
-                    ))}
+        works.length > 0 ? (
+            works.map(works_genre => (
+                <div class="works-genre">
+                    <h2>{works_genre.genre}</h2>
+                    <div class="works-container">
+                        {works_genre.works.map(work => (
+                            <WorksCard {...work} />
+                        ))}
+                    </div>
                 </div>
+            ))
+        ) : (
+            <div class="empty-state">
+                <p>Works will appear here as I add them.</p>
+                <p>Check back soon for project updates.</p>
             </div>
-        ))
+        )
     }
 </PostLayout>
 
@@ -72,5 +79,13 @@ const works: Works[] = [
         grid-template-columns: 1fr;
         gap: 2em;
         margin-top: 2em;
+    }
+    .empty-state {
+        text-align: center;
+        padding: 3em 1em;
+        color: rgb(var(--text-secondary));
+    }
+    .empty-state p {
+        margin-bottom: 0.5em;
     }
 </style>
