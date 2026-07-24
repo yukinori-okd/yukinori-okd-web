@@ -44,13 +44,11 @@ const { title, description, technologies, links } = Astro.props;
         border: 1px solid rgb(var(--surface-sub));
         border-radius: 8px;
         padding: 1.5em;
-        box-shadow: 0 1px 3px rgba(var(--text-secondary), 15%);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: box-shadow 0.2s ease;
     }
 
     .works-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(var(--text-secondary), 25%);
+        box-shadow: 0 4px 16px rgba(var(--text-secondary), 20%);
     }
 
     .card-header {
@@ -123,17 +121,17 @@ const { title, description, technologies, links } = Astro.props;
     .link-button {
         display: inline-block;
         padding: 0.4em 0.8em;
-        background-color: rgb(var(--accent-base));
-        color: rgb(var(--accent-text));
-        border: 2px solid rgb(var(--surface-sub));
+        color: rgb(var(--accent));
+        border: 2px solid rgb(var(--accent));
         border-radius: 4px;
         text-decoration: none;
         font-size: 0.9em;
         font-weight: 500;
-        transition: opacity 0.2s ease;
+        transition: background-color 0.15s, color 0.15s;
     }
 
     .link-button:hover {
-        opacity: 0.8;
+        background-color: rgb(var(--accent));
+        color: #fff;
     }
 </style>

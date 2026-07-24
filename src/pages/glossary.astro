@@ -331,8 +331,6 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
         background: rgb(var(--accent));
         color: #fff;
         border-color: rgb(var(--accent));
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .index-section {
         margin-bottom: 3rem;
@@ -352,13 +350,10 @@ const sortedInitials = Object.keys(groupedWords).sort((a, b) => {
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid rgba(128, 128, 128, 0.2);
-        transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
+        transition: border-color 0.15s ease;
     }
     .word-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: rgb(var(--accent));
     }
     .term {
         margin: 0;

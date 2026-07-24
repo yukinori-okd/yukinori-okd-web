@@ -4,7 +4,11 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-:root,
+:root {
+    --focus-ring-color: rgb(var(--accent));
+    --focus-ring-offset: 2px;
+}
+
 [data-theme="light"] {
     --accent: 35, 55, 255;
     --accent-hover: 0, 13, 138;
@@ -180,6 +184,31 @@ hr {
     }
     main {
         padding: 1em;
+    }
+}
+
+/* Focus-visible: visible focus ring for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: 2px;
+}
+
+/* Suppress focus ring for mouse/touch users */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+::selection {
+    background-color: rgba(var(--accent), 0.2);
+    color: rgb(var(--text-primary));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
