@@ -44,11 +44,11 @@ const { title, description, technologies, links } = Astro.props;
         border: 1px solid rgb(var(--surface-sub));
         border-radius: 8px;
         padding: 1.5em;
-        transition: box-shadow 0.2s ease;
+        transition: border-color 0.15s ease;
     }
 
     .works-card:hover {
-        box-shadow: 0 4px 16px rgba(var(--text-secondary), 20%);
+        border-color: rgb(var(--accent));
     }
 
     .card-header {
