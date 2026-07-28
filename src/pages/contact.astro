@@ -26,6 +26,12 @@ const links = [
     description="Get in touch with me."
     pubDate={new Date('2026-04-10')}
 >
+    <div class="contact-intro">
+        <p>
+            お気軽にご連絡ください。<br />
+            通常2〜3日以内にお返事いたします。
+        </p>
+    </div>
     <div class="contact-links">
         {links.map(link => (
             <a href={link.url} target="_blank" rel="noopener noreferrer" class="contact-link">
@@ -37,6 +43,11 @@ const links = [
 </PostLayout>
 
 <style>
+    .contact-intro {
+        margin-bottom: 1.5em;
+        color: rgb(var(--text-body));
+        line-height: 1.8;
+    }
     .contact-links {
         display: flex;
         flex-wrap: wrap;
