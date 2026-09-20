@@ -14,6 +14,6 @@ allPosts.forEach((post) => {
 
 const sortedTags = Array.from(uniqueTags).sort(); // アルファベット順にソート
 ---
-<PostLayout title="すべてのタグ一覧" description="" pubDate={new Date()} updatedDate={new Date()}>
+<PostLayout title="すべてのタグ一覧" description="" pubDate={new Date()}>
   <TagList tags={sortedTags} />
 </PostLayout>

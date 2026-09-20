@@ -39,7 +39,7 @@ const { tag, posts } = Astro.props;
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<PostLayout title={`タグ: 「${tag}」 の記事一覧`} description="" pubDate={new Date()} updatedDate={new Date()}>
+<PostLayout title={`タグ: 「${tag}」 の記事一覧`} description="" pubDate={new Date()}>
   <ul class="post-list">
     {posts.map((post) => (
       <li class="post-list-item">
