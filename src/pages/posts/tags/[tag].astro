@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../../../components/FormattedDate.astro';
 import PostLayout from '../../../layouts/PostLayout.astro'; // 適切なレイアウトを指定
 
 export async function getStaticPaths() {
@@ -38,21 +39,61 @@ const { tag, posts } = Astro.props;
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<PostLayout title={`タグ: ${tag}`} description='' pubDate={new Date()} updatedDate={new Date()}>
-  <h1>タグ: 「{tag}」 の記事一覧</h1>
-
-  <ul>
+<PostLayout title={`タグ: 「${tag}」 の記事一覧`} description="" pubDate={new Date()} updatedDate={new Date()}>
+  <ul class="post-list">
     {posts.map((post) => (
-      <li>
-        <a href={`/posts/${post.id}/`}>{post.data.title}</a>
-        <span style="font-size: 0.8em; margin-left: 8px;">
-          ({post.data.pubDate.toLocaleDateString()})
-        </span>
+      <li class="post-list-item">
+        <a href={`/posts/${post.id}/`}>
+          <span class="post-title">{post.data.title}</span>
+          <span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
+        </a>
       </li>
     ))}
   </ul>
 
-  <p>
+  <p class="back-link">
     <a href="/posts/tags/">すべてのタグ一覧へ</a>
   </p>
 </PostLayout>
+
+<style>
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+  .post-list-item {
+    border: 1px solid rgb(var(--surface-sub));
+    border-radius: 8px;
+    transition: border-color 0.15s ease;
+  }
+  .post-list-item:hover {
+    border-color: rgb(var(--accent));
+  }
+  .post-list-item a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 0.9em 1.2em;
+    text-decoration: none;
+    color: rgb(var(--text-primary));
+  }
+  .post-title {
+    font-weight: 700;
+  }
+  .post-list-item a:hover .post-title {
+    color: rgb(var(--accent));
+  }
+  .post-date {
+    flex-shrink: 0;
+    font-size: 0.85em;
+    color: rgb(var(--text-secondary));
+  }
+  .back-link {
+    margin-top: 2em;
+  }
+</style>
