@@ -215,15 +215,9 @@ const skills: SkillCardProps[] = [
     <style>
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2em;
             margin: 2em 0;
-        }
-
-        @media (max-width: 768px) {
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </PostLayout>
