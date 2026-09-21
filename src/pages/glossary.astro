@@ -192,6 +192,121 @@ const words = [
         tags: ["Technology"],
         references: ["https://github.com/cps-org/cps"],
     },
+    {
+        term: "MathJax",
+        reading: "マスジャックス",
+        definition:
+            "JavaScriptで実装された数式レンダリングライブラリ。TeX記法などで書かれた数式をHTMLやSVGに変換して表示する。このサイトでもビルド時のSVG生成に使用している。",
+        tags: ["Typography", "Web"],
+        references: ["https://www.mathjax.org/"],
+    },
+    {
+        term: "KaTeX",
+        reading: "カテック",
+        definition:
+            "ウェブ上でTeX記法の数式を高速にレンダリングするJavaScriptライブラリ。表示が速いのが特徴。",
+        tags: ["Typography", "Web"],
+        references: ["https://katex.org/"],
+    },
+    {
+        term: "SVG",
+        reading: "エスブイジー",
+        definition:
+            "Scalable Vector Graphicsの略。XML形式で記述されるベクター画像フォーマット。拡大しても画質が劣化しないため、アイコンや数式の表示に適している。",
+        tags: ["Technology", "Web"],
+        references: ["https://www.w3.org/Graphics/SVG/"],
+    },
+    {
+        term: "mise",
+        reading: "ミーズ",
+        definition:
+            "開発ツールのバージョンを一元管理するツール。Node.jsやRubyなど複数言語のランタイムをまとめて管理でき、プロジェクトごとにバージョンを切り替えられる。",
+        tags: ["Technology", "Version Manager"],
+        references: ["https://mise.jdx.dev/"],
+    },
+    {
+        term: "Node.js",
+        reading: "ノードジェイエス",
+        definition:
+            "JavaScriptをサーバーサイドやローカルで実行するためのランタイム環境。非同期I/Oを得意とし、WebサーバーやCLIツールの開発などに広く用いられる。",
+        tags: ["Technology", "Web"],
+        references: ["https://nodejs.org/"],
+    },
+    {
+        term: "npm",
+        reading: "エヌピーエム",
+        definition:
+            "Node.jsに標準で付属するパッケージマネージャー。依存ライブラリの管理や、グローバルインストールによるCLIツールの導入などに用いられる。",
+        tags: ["Technology", "Package Manager"],
+        references: ["https://www.npmjs.com/"],
+    },
+    {
+        term: "pnpm",
+        reading: "ピーエヌピーエム",
+        definition:
+            "Performant npmの略。npmとの互換性を保ちつつ、ハードリンクによるストレージの効率化と動作の高速化を実現したパッケージマネージャー。このサイトの依存関係管理でも使用している。",
+        tags: ["Technology", "Package Manager"],
+        references: ["https://pnpm.io/"],
+    },
+    {
+        term: "winget",
+        reading: "ウィンゲット",
+        definition:
+            "Windows Package Manager。Microsoftが提供するWindows向けのコマンドラインパッケージマネージャー。アプリケーションの検索・インストール・更新をコマンドラインで行える。",
+        tags: ["Technology", "Package Manager"],
+        references: [
+            "https://learn.microsoft.com/ja-jp/windows/package-manager/winget/",
+            "https://github.com/microsoft/winget-cli",
+        ],
+    },
+    {
+        term: "PowerShell",
+        reading: "パワーシェル",
+        definition:
+            "Microsoftが開発したシェルおよびスクリプト言語。Windowsに標準搭載されており、.NETを基盤としたオブジェクト指向のパイプラインを特徴とする。PowerShell 7以降(pwsh)ではクロスプラットフォームとなっており、macOSやLinuxでも利用できる。",
+        tags: ["Technology", "Language"],
+        references: ["https://learn.microsoft.com/ja-jp/powershell/"],
+    },
+    {
+        term: "Lua",
+        reading: "ルア",
+        definition:
+            "ブラジルで開発された軽量なスクリプト言語。C言語との親和性が高く、アプリケーションへの組み込み用途で広く使われている。REAPERのReaScriptでも利用できる。",
+        tags: ["Language"],
+        references: ["https://www.lua.org/"],
+    },
+    {
+        term: "cURL",
+        reading: "カール",
+        definition:
+            "様々なプロトコルに対応したコマンドラインツール。HTTPリクエストの送信やファイルのダウンロードなどに用いられ、主要なOSでは標準でインストールされていることが多い。",
+        tags: ["Technology", "Web"],
+        references: ["https://curl.se/"],
+    },
+    {
+        term: "Ruby",
+        reading: "ルビー",
+        definition:
+            "まつもとゆきひろ氏によって開発されたオブジェクト指向のスクリプト言語。読みやすさを重視した文法が特徴で、WebアプリケーションフレームワークのRuby on Railsなどで用いられる。",
+        tags: ["Language"],
+        references: ["https://www.ruby-lang.org/"],
+    },
+    {
+        term: "REAPER",
+        reading: "リーパー",
+        definition:
+            "Cockos社が開発するクロスプラットフォームなDAW（Digital Audio Workstation）。軽量かつ高速な動作と、スクリプトによる高い拡張性が特徴。",
+        tags: ["Technology", "Audio"],
+        references: ["https://www.reaper.fm/"],
+    },
+    {
+        term: "ReaScript",
+        reading: "リアスクリプト",
+        definition:
+            "REAPER上で動作するスクリプト環境。EEL2、Lua、Pythonのいずれかで記述でき、REAPERの操作の自動化や機能拡張を行える。",
+        tags: ["Technology", "Audio"],
+        references: ["https://www.reaper.fm/sdk/reascript/reascript.php"],
+    },
 ];
 
 // 用語をアルファベット順・五十音順などにソート
