@@ -17,7 +17,7 @@ tags: ["mise", "Node.js", "Ruby", "Windows", "macOS"]
 
 ### Windows
 
-まず、[PowerShellの実行ポリシーについて](/posts/20260921-powershell-execution-policy)、あらかじめ確認しておくべきである。設定しておかないとmiseでインストールしたツールの実行に失敗することがある。
+まず、[PowerShellの実行ポリシーについて](/posts/2026/09/21/powershell-execution-policy/)、あらかじめ確認しておくべきである。設定しておかないとmiseでインストールしたツールの実行に失敗することがある。
 
 Windowsでは[winget](https://learn.microsoft.com/ja-jp/windows/package-manager/winget/)を用いてインストールする。
 

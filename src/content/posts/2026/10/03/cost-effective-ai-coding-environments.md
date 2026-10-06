@@ -9,7 +9,7 @@ tags: ["AI", "LLM", "Claude", "Gemini", "Antigravity", "OpenCode", "Command Code
 
 ## AIを試したきっかけ
 AIを試そうと思ったのは6月頃ですが、以下のようなきっかけがあったためです。
-- [ADC Japan 26](/posts/20260611-adc-japan-26)において、エージェントを活用したコーディングが目立っていたこと
+- [ADC Japan 26](/posts/2026/06/11/adc-japan-26/)において、エージェントを活用したコーディングが目立っていたこと
 - 友人がOpenAIモデルやClaudeモデルの凄さを熱く語ってくれたこと
 - 先輩などがClaudeを日常的に活用していると聞いたこと
 
